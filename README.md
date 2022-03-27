@@ -12,3 +12,4 @@
 
 5.點選「目前新增N筆線上訂單」，顯示網路訂單明細。(圖三)
 ![圖片3](https://user-images.githubusercontent.com/97154985/160267456-696e8b34-2e9c-412f-981e-71c830f70dbc.jpg)
+
