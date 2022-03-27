@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   <meta charset="UTF-8">
+    <title>滷味</title>
+  </head>
+  <form action="/" method="POST">
+      <label> 輸入會員ID</label>
+    <input id="input_id" type="number" name="fname">
+    <button onclick="myFunction()" type="button" >結帳(截圖)</button>
+  </form>
+
+  <body>
+  <div id="reload_qty"><h3> {{show_qty}} </h3></div>
+
+
+
+  <div> {% include 'time.html' %} </div>
+    <img src="{{ url_for('video_feed') }}" width="35%">
+
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+     <script>
+function myFunction() {
+  var name = document.getElementById("input_id").value;
+  console.log(name);
+  $.post("/takeimage",
+   {
+     name: name
+   },
+   );
+   setTimeout(function(){
+   $("#show_result").load("/caculate")},2000)
+
+}
+
+</script>
+
+  <div id="show_result" ><h1> </h1></div>
+
+
+  </body>
+</html>
